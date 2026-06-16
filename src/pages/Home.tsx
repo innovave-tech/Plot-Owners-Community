@@ -30,22 +30,23 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg')" }}
+          style={{ backgroundImage: "url('/images/layouts/main bg.jpeg')" }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/85 to-primary-50/70" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-32">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full text-gray-700 text-sm mb-8 animate-fade-in">
-            <span className="w-2 h-2 rounded-full bg-accent-500 animate-pulse" />
-            Regd. No. {ASSOCIATION.regNumber}
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6 animate-slide-up">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-2 animate-slide-up">
             {ASSOCIATION.name}
           </h1>
+          <h2 className="text-2xl sm:text-3xl font-bold text-accent-600 mb-3 animate-slide-up">
+            ({ASSOCIATION.shortName})
+          </h2>
+          <p className="text-lg sm:text-xl font-semibold text-gray-700 mb-6 animate-fade-in">
+            Regd. No. {ASSOCIATION.regNumber}
+          </p>
 
-          <p className="text-lg sm:text-xl text-gray-700 mb-4 flex items-center justify-center gap-2 animate-fade-in">
-            <MapPin className="w-5 h-5 text-accent-600" />
+          <p className="text-base sm:text-lg text-gray-700 mb-4 animate-fade-in whitespace-pre-line">
+            <MapPin className="w-5 h-5 text-accent-600 inline-block mr-2 align-top" />
             {ASSOCIATION.address}
           </p>
 
@@ -71,6 +72,30 @@ export default function Home() {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex items-start justify-center pt-2">
             <div className="w-1.5 h-3 bg-gray-400 rounded-full" />
+          </div>
+        </div>
+      </section>
+
+      {/* About JPOWA */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">About JPOWA</h2>
+            <h3 className="text-xl font-semibold text-accent-600 mb-6">Purpose</h3>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              'Maintain common facilities.',
+              'Protect plot owners\' interests.',
+              'Provide smooth administration.',
+              'Manage funds effectively.',
+              'Promote cooperation among members.',
+            ].map((purpose, idx) => (
+              <div key={idx} className="card flex items-center gap-4">
+                <CheckCircle className="w-6 h-6 text-accent-600 flex-shrink-0" />
+                <p className="text-gray-700">{purpose}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -124,14 +149,14 @@ export default function Home() {
             <div className="relative">
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
                 <img
-                  src="https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg"
+                  src="/images/layouts/dashboard.jpeg"
                   alt="Community"
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 w-40 h-40 rounded-2xl overflow-hidden shadow-xl border-4 border-white dark:border-gray-800">
                 <img
-                  src="https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg"
+                  src="/images/layouts/bg 2.jpeg"
                   alt="Township"
                   className="w-full h-full object-cover"
                 />
@@ -213,9 +238,9 @@ export default function Home() {
             <Link to="/membership-form" className="btn-accent text-base px-8 py-4">
               Apply for Membership <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link to="/contact" className="inline-flex items-center gap-2 px-8 py-4 border-2 border-primary-900/30 text-primary-900 rounded-lg font-medium hover:bg-primary-100 transition-all text-base">
+            <Link to="/membership" className="inline-flex items-center gap-2 px-8 py-4 border-2 border-primary-900/30 text-primary-900 rounded-lg font-medium hover:bg-primary-100 transition-all text-base">
               <Phone className="w-5 h-5" />
-              Contact Us
+              Membership
             </Link>
           </div>
           <div className="mt-10 flex flex-col sm:flex-row gap-6 justify-center text-gray-600 text-sm">

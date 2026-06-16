@@ -1,8 +1,8 @@
 export const ASSOCIATION = {
-  name: 'Jagannathapuram Plot Owners Welfare Association',
+  name: 'JAGANNATHAPURAM PLOT OWNERS\' WELFARE ASSOCIATION',
   shortName: 'JPOWA',
   regNumber: '614/2015',
-  address: '5-5-858, Chintalkunta Old Check Post, Jahangir Nagar, L. B. Nagar, Hyderabad',
+  address: '5-5-858,\nChintalkunta Old Check Post,\nJahangir Nagar,\nL.B. Nagar,\nHyderabad, Telangana',
   phone: '9876543210',
   email: 'info@jpowa.org',
   totalMembers: 120,
@@ -12,11 +12,13 @@ export const ASSOCIATION = {
 
 export const NAV_LINKS = [
   { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
+  { label: 'About Us', path: '/about' },
   { label: 'Facilities', path: '/facilities' },
   { label: 'Committee', path: '/committee' },
   { label: 'Gallery', path: '/gallery' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Layouts', path: '/layouts' },
+  { label: 'Meetings & Finances', path: '/meetings' },
+  { label: 'Membership', path: '/membership' },
 ] as const;
 
 export const POSITIONS = [

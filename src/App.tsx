@@ -11,7 +11,9 @@ import About from './pages/About';
 import Facilities from './pages/Facilities';
 import Committee from './pages/Committee';
 import Gallery from './pages/Gallery';
-import Contact from './pages/Contact';
+import Membership from './pages/Membership';
+import Meetings from './pages/Meetings';
+import Layouts from './pages/Layouts';
 import MembershipForm from './pages/MembershipForm';
 import Login from './pages/Login';
 import NotFound from './pages/NotFound';
@@ -52,11 +54,14 @@ function AppRoutes() {
       <Route element={<PublicLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/facilities" element={<Facilities />} />
-        <Route path="/committee" element={<Committee />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/membership-form" element={<MembershipForm />} />
+          <Route path="/facilities" element={<Facilities />} />
+          <Route path="/committee" element={<Committee />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<Navigate to="/membership" replace />} />
+          <Route path="/membership" element={<Membership />} />
+          <Route path="/meetings" element={<Meetings />} />
+          <Route path="/layouts" element={<Layouts />} />
+          <Route path="/membership-form" element={<MembershipForm />} />
       </Route>
 
       {/* Auth */}
