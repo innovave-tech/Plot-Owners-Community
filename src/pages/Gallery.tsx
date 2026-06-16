@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 
-const categories = ['All', 'Community', 'Club House', 'Roads', 'Parks', 'Events'];
+const categories = ['All', 'Community', 'News', 'Events'];
 
 const imgPhotos = [
   { id: 1, src: '/images/layouts/img 1.jpeg', title: 'Community View 1', category: 'Community' },
@@ -22,26 +22,19 @@ const imgPhotos = [
 ];
 
 const nPhotos = [
-  { id: 16, src: '/images/layouts/n 1.jpeg', title: 'Nature View 1', category: 'Parks' },
-  { id: 17, src: '/images/layouts/n 2.jpeg', title: 'Nature View 2', category: 'Parks' },
-  { id: 18, src: '/images/layouts/n3.jpeg', title: 'Nature View 3', category: 'Parks' },
-  { id: 19, src: '/images/layouts/n4.jpeg', title: 'Nature View 4', category: 'Parks' },
-  { id: 20, src: '/images/layouts/n 5.jpeg', title: 'Nature View 5', category: 'Parks' },
+  { id: 16, src: '/images/layouts/n 1.jpeg', title: 'Nature View 1', category: 'News' },
+  { id: 17, src: '/images/layouts/n 2.jpeg', title: 'Nature View 2', category: 'News' },
+  { id: 18, src: '/images/layouts/n3.jpeg', title: 'Nature View 3', category: 'News' },
+  { id: 19, src: '/images/layouts/n4.jpeg', title: 'Nature View 4', category: 'News' },
+  { id: 20, src: '/images/layouts/n 5.jpeg', title: 'Nature View 5', category: 'News' },
 ];
 
 const photos = [
   { id: 101, src: 'https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg', title: 'Gated Community Entrance', category: 'Community' },
-  { id: 102, src: 'https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg', title: 'Club House', category: 'Club House' },
-  { id: 103, src: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg', title: 'Community Greens', category: 'Parks' },
-  { id: 104, src: 'https://images.pexels.com/photos/1197095/pexels-photo-1197095.jpeg', title: 'Internal Roads', category: 'Roads' },
-  { id: 105, src: 'https://images.pexels.com/photos/1552252/pexels-photo-1552252.jpeg', title: 'Fitness Center', category: 'Club House' },
-  { id: 106, src: 'https://images.pexels.com/photos/1148998/pexels-photo-1148998.jpeg', title: 'Children\'s Playground', category: 'Parks' },
-  { id: 107, src: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg', title: 'Annual Meeting', category: 'Events' },
+
   { id: 108, src: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg', title: 'Community Center', category: 'Community' },
-  { id: 109, src: 'https://images.pexels.com/photos/7005732/pexels-photo-7005732.jpeg', title: 'Picnic Area', category: 'Parks' },
-  { id: 110, src: 'https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg', title: 'Green Plantation', category: 'Parks' },
+
   { id: 111, src: 'https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg', title: 'Township Overview', category: 'Community' },
-  { id: 112, src: 'https://images.pexels.com/photos/209977/pexels-photo-209977.jpeg', title: 'Sports Courts', category: 'Events' },
 ];
 
 const allPhotos = [...imgPhotos, ...nPhotos, ...photos];

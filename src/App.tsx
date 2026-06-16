@@ -1,6 +1,7 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
+import { useEffect } from 'react';
 
 import PublicLayout from './layouts/PublicLayout';
 import MemberLayout from './layouts/MemberLayout';
@@ -33,6 +34,15 @@ import ComplaintsAdmin from './pages/admin/ComplaintsAdmin';
 import AccountsAdmin from './pages/admin/AccountsAdmin';
 import ApplicationsAdmin from './pages/admin/ApplicationsAdmin';
 
+// Scroll to top component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 function ProtectedMember({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
   if (loading) return <div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-4 border-primary-900 border-t-transparent rounded-full animate-spin" /></div>;
@@ -49,7 +59,9 @@ function ProtectedAdmin({ children }: { children: React.ReactNode }) {
 
 function AppRoutes() {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       {/* Public Routes */}
       <Route element={<PublicLayout />}>
         <Route path="/" element={<Home />} />
@@ -91,7 +103,8 @@ function AppRoutes() {
       </Route>
 
       <Route path="*" element={<NotFound />} />
-    </Routes>
+      </Routes>
+    </>
   );
 }
 

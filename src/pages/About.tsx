@@ -672,7 +672,7 @@ export default function About() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
               <img
-                src="https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg"
+                src="/images/layouts/main bg.jpeg"
                 alt="Community"
                 className="w-full rounded-3xl shadow-2xl object-cover aspect-video"
               />
