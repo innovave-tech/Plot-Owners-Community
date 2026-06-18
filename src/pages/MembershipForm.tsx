@@ -142,18 +142,18 @@ export default function MembershipForm() {
         {/* The Printable Form */}
         <div ref={printRef} className="bg-white dark:bg-gray-800 rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden print-page">
           {/* Form Header */}
-          <div className="border-b-4 border-red-600 p-6 text-center bg-white">
-            <h1 className="text-xl md:text-2xl font-bold text-red-600 uppercase tracking-wide mb-2">
+          <div className="border-b-4 border-red-600 p-4 text-center bg-white">
+            <h1 className="text-lg md:text-xl font-bold text-red-600 uppercase tracking-wide mb-1">
               {ASSOCIATION.name}
             </h1>
-            <p className="text-primary-900 font-medium text-sm">(Regd. No. {ASSOCIATION.regNumber})</p>
-            <p className="text-primary-900 text-sm">{ASSOCIATION.address}</p>
-            <div className="mt-4 border-t border-gray-200 pt-4">
-              <h2 className="text-lg font-bold text-gray-900 uppercase tracking-widest">Membership Form</h2>
+            <p className="text-primary-900 font-medium text-xs">(Regd. No. {ASSOCIATION.regNumber})</p>
+            <p className="text-primary-900 text-xs">{ASSOCIATION.address}</p>
+            <div className="mt-2 border-t border-gray-200 pt-2">
+              <h2 className="text-base font-bold text-gray-900 uppercase tracking-widest">Membership Form</h2>
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="p-6 space-y-0 bg-white dark:bg-gray-800">
+          <form onSubmit={handleSubmit} className="p-4 space-y-0 bg-white dark:bg-gray-800">
             {/* Applicant Details Table */}
             <div className="border border-gray-300 dark:border-gray-600">
               {/* Headers */}
@@ -239,27 +239,27 @@ export default function MembershipForm() {
 
             {/* Plot Details */}
             <div className="border border-t-0 border-gray-300 dark:border-gray-600">
-              <div className="grid grid-cols-4 border-b border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-sm font-semibold text-gray-900 dark:text-white">
-                <div className="border-r border-gray-300 dark:border-gray-600 px-4 py-2">Plot No</div>
-                <div className="border-r border-gray-300 dark:border-gray-600 px-4 py-2">Sy.No</div>
-                <div className="border-r border-gray-300 dark:border-gray-600 px-4 py-2">Sq. Yards</div>
-                <div className="px-4 py-2 no-print">Action</div>
+              <div className="grid grid-cols-4 border-b border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 text-xs font-semibold text-gray-900 dark:text-white">
+                <div className="border-r border-gray-300 dark:border-gray-600 px-2 py-1">Plot No</div>
+                <div className="border-r border-gray-300 dark:border-gray-600 px-2 py-1">Sy.No</div>
+                <div className="border-r border-gray-300 dark:border-gray-600 px-2 py-1">Sq. Yards</div>
+                <div className="px-2 py-1 no-print">Action</div>
               </div>
               {form.plots.map((plot, i) => (
                 <div key={i} className="grid grid-cols-4 border-b border-gray-200 dark:border-gray-600">
-                  <div className="border-r border-gray-200 dark:border-gray-600 p-1">
-                    <input className="form-input-cell text-sm" value={plot.plot_number} onChange={e => setPlot(i, 'plot_number', e.target.value)} placeholder="Plot number" />
+                  <div className="border-r border-gray-200 dark:border-gray-600 p-0.5">
+                    <input className="form-input-cell text-xs" value={plot.plot_number} onChange={e => setPlot(i, 'plot_number', e.target.value)} placeholder="Plot number" />
                   </div>
-                  <div className="border-r border-gray-200 dark:border-gray-600 p-1">
-                    <input className="form-input-cell text-sm" value={plot.survey_number} onChange={e => setPlot(i, 'survey_number', e.target.value)} placeholder="Survey number" />
+                  <div className="border-r border-gray-200 dark:border-gray-600 p-0.5">
+                    <input className="form-input-cell text-xs" value={plot.survey_number} onChange={e => setPlot(i, 'survey_number', e.target.value)} placeholder="Survey number" />
                   </div>
-                  <div className="border-r border-gray-200 dark:border-gray-600 p-1">
-                    <input className="form-input-cell text-sm" type="number" value={plot.sq_yards} onChange={e => setPlot(i, 'sq_yards', e.target.value)} placeholder="0" />
+                  <div className="border-r border-gray-200 dark:border-gray-600 p-0.5">
+                    <input className="form-input-cell text-xs" type="number" value={plot.sq_yards} onChange={e => setPlot(i, 'sq_yards', e.target.value)} placeholder="0" />
                   </div>
-                  <div className="p-2 flex items-center no-print">
+                  <div className="p-1 flex items-center no-print">
                     {i > 0 && (
-                      <button type="button" onClick={() => removePlot(i)} className="p-1 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded">
-                        <Trash2 className="w-4 h-4" />
+                      <button type="button" onClick={() => removePlot(i)} className="p-0.5 text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded">
+                        <Trash2 className="w-3 h-3" />
                       </button>
                     )}
                   </div>
@@ -267,14 +267,14 @@ export default function MembershipForm() {
               ))}
               {/* Total */}
               <div className="grid grid-cols-4 border-b border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700">
-                <div className="col-span-2 border-r border-gray-300 dark:border-gray-600 px-4 py-2" />
-                <div className="border-r border-gray-300 dark:border-gray-600 px-4 py-2">
-                  <span className="text-sm font-bold text-gray-900 dark:text-white">TOTAL Sq.Y: {totalSqYards || ''}</span>
+                <div className="col-span-2 border-r border-gray-300 dark:border-gray-600 px-2 py-1" />
+                <div className="border-r border-gray-300 dark:border-gray-600 px-2 py-1">
+                  <span className="text-xs font-bold text-gray-900 dark:text-white">TOTAL Sq.Y: {totalSqYards || ''}</span>
                 </div>
-                <div className="px-4 py-2 no-print">
+                <div className="px-2 py-1 no-print">
                   {form.plots.length < 4 && (
-                    <button type="button" onClick={addPlot} className="flex items-center gap-1 text-xs text-accent-600 dark:text-accent-400 hover:underline">
-                      <Plus className="w-3 h-3" /> Add Plot
+                    <button type="button" onClick={addPlot} className="flex items-center gap-1 text-[10px] text-accent-600 dark:text-accent-400 hover:underline">
+                      <Plus className="w-2.5 h-2.5" /> Add Plot
                     </button>
                   )}
                 </div>
@@ -282,45 +282,45 @@ export default function MembershipForm() {
             </div>
 
             {/* Agreement */}
-            <div className="border border-t-0 border-gray-300 dark:border-gray-600 p-4">
-              <p className="text-sm text-gray-700 dark:text-gray-200 mb-6">
+            <div className="border border-t-0 border-gray-300 dark:border-gray-600 p-3">
+              <p className="text-xs text-gray-700 dark:text-gray-200 mb-3">
                 I agree to abide Association by and laws and will not interfere against the Association interest.
               </p>
-              <div className="grid grid-cols-2 gap-8">
-                <div className="space-y-6">
-                  <div className="border-t border-gray-400 pt-2">
-                    <p className="text-xs text-gray-500">Signature:</p>
-                    <p className="text-xs text-gray-500 mt-4">(NAME):</p>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="space-y-3">
+                  <div className="border-t border-gray-400 pt-1">
+                    <p className="text-[10px] text-gray-500">Signature:</p>
+                    <p className="text-[10px] text-gray-500 mt-2">(NAME):</p>
                   </div>
                 </div>
-                <div className="space-y-4">
-                  <div className="border border-gray-200 dark:border-gray-600 rounded p-3 bg-yellow-50 dark:bg-yellow-900/10">
-                    <p className="text-sm font-semibold text-gray-900 dark:text-white">Received: Rs.1000/-</p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">In Words: Rupees One Thousand Only</p>
+                <div className="space-y-3">
+                  <div className="border border-gray-200 dark:border-gray-600 rounded p-2 bg-yellow-50 dark:bg-yellow-900/10">
+                    <p className="text-xs font-semibold text-gray-900 dark:text-white">Received: Rs.1000/-</p>
+                    <p className="text-[10px] text-gray-500 dark:text-gray-400">In Words: Rupees One Thousand Only</p>
                   </div>
-                  <div className="border-t border-gray-400 pt-2">
-                    <p className="text-xs text-red-600 font-semibold">Rep Signature:</p>
-                    <p className="text-xs text-gray-500 mt-4">(Authorised Signatory) & Date</p>
+                  <div className="border-t border-gray-400 pt-1">
+                    <p className="text-[10px] text-red-600 font-semibold">Rep Signature:</p>
+                    <p className="text-[10px] text-gray-500 mt-2">(Authorised Signatory) & Date</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Rep Name & Enclosures */}
-            <div className="border border-t-0 border-gray-300 dark:border-gray-600 p-4">
-              <div className="grid grid-cols-2 gap-8">
+            <div className="border border-t-0 border-gray-300 dark:border-gray-600 p-3">
+              <div className="grid grid-cols-2 gap-6">
                 <div>
-                  <p className="text-sm font-semibold text-green-600 dark:text-green-400 mb-2">Enclosures</p>
-                  <ol className="text-sm text-gray-700 dark:text-gray-200 space-y-1 list-decimal list-inside">
+                  <p className="text-xs font-semibold text-green-600 dark:text-green-400 mb-1">Enclosures</p>
+                  <ol className="text-[10px] text-gray-700 dark:text-gray-200 space-y-0.5 list-decimal list-inside">
                     <li>Copy of Sale Deed</li>
                     <li>Passport Size Photo</li>
                     <li>Valid Identity proof (Adhaar card)</li>
                   </ol>
                 </div>
                 <div>
-                  <div className="border-t border-gray-400 pt-2">
-                    <p className="text-xs text-red-600 font-semibold">(Representative NAME):</p>
-                    <p className="text-xs text-gray-500 mt-4">(Authorised Signatory) & Date</p>
+                  <div className="border-t border-gray-400 pt-1">
+                    <p className="text-[10px] text-red-600 font-semibold">(Representative NAME):</p>
+                    <p className="text-[10px] text-gray-500 mt-2">(Authorised Signatory) & Date</p>
                   </div>
                 </div>
               </div>
@@ -371,22 +371,22 @@ function FormRow({ label, input1, input2, photo, showPhoto }: {
     <div className={`grid ${showPhoto ? 'grid-cols-[1fr_1fr_auto]' : 'grid-cols-[1fr_1fr_auto]'} border-b border-gray-200 dark:border-gray-600`}>
       <div className="border-r border-gray-200 dark:border-gray-600">
         <div className="flex items-stretch">
-          <div className="w-32 flex-shrink-0 px-3 py-2 bg-gray-50 dark:bg-gray-700 border-r border-gray-200 dark:border-gray-600 flex items-center">
-            <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{label}</span>
+          <div className="w-28 flex-shrink-0 px-2 py-1 bg-gray-50 dark:bg-gray-700 border-r border-gray-200 dark:border-gray-600 flex items-center">
+            <span className="text-[10px] font-medium text-gray-700 dark:text-gray-300">{label}</span>
           </div>
-          <div className="flex-1 p-1">{input1}</div>
+          <div className="flex-1 p-0.5">{input1}</div>
         </div>
       </div>
-      <div className="border-r border-gray-200 dark:border-gray-600 p-1">{input2}</div>
-      {showPhoto ? <div className="w-48">{photo}</div> : <div className="w-48" />}
+      <div className="border-r border-gray-200 dark:border-gray-600 p-0.5">{input2}</div>
+      {showPhoto ? <div className="w-40">{photo}</div> : <div className="w-40" />}
     </div>
   );
 }
 
 function PhotoBox({ label }: { label: string }) {
   return (
-    <div className="h-full min-h-[80px] border border-dashed border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 flex items-center justify-center p-2">
-      <p className="text-xs text-gray-400 dark:text-gray-500 text-center leading-tight">{label}</p>
+    <div className="h-full min-h-[60px] border border-dashed border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 flex items-center justify-center p-1">
+      <p className="text-[9px] text-gray-400 dark:text-gray-500 text-center leading-tight">{label}</p>
     </div>
   );
 }
